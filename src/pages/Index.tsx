@@ -10,6 +10,7 @@ import Testimonials from "@/components/home/Testimonials";
 import PromoBanner from "@/components/home/PromoBanner";
 import Newsletter from "@/components/home/Newsletter";
 import SiteFooter from "@/components/home/SiteFooter";
+import ScrollReveal from "@/components/home/ScrollReveal";
 
 const Index = () => {
   return (
@@ -17,15 +18,33 @@ const Index = () => {
       <SiteHeader />
       <main>
         <HeroSection />
-        <CategoryGrid />
-        <FeaturedProducts />
-        <TrustSection />
-        <AboutSection />
-        <Bestsellers />
-        <LifestyleSection />
-        <Testimonials />
-        <PromoBanner />
-        <Newsletter />
+        <ScrollReveal>
+          <CategoryGrid />
+        </ScrollReveal>
+        <ScrollReveal>
+          <FeaturedProducts />
+        </ScrollReveal>
+        <ScrollReveal>
+          <TrustSection />
+        </ScrollReveal>
+        <ScrollReveal animation="fade-in-left">
+          <AboutSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <Bestsellers />
+        </ScrollReveal>
+        <ScrollReveal>
+          <LifestyleSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <Testimonials />
+        </ScrollReveal>
+        <ScrollReveal animation="fade-in-up">
+          <PromoBanner />
+        </ScrollReveal>
+        <ScrollReveal>
+          <Newsletter />
+        </ScrollReveal>
       </main>
       <SiteFooter />
     </div>
