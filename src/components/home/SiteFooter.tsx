@@ -1,4 +1,4 @@
-import logo from "/user-uploads/cigar-logo_2.png";
+import logo from "@/assets/cigar-logo.png";
 
 const footerLinks = {
   "Shop": ["Premium Cigars", "Accessories", "Luxury Gifts", "Collectibles", "New Arrivals", "Sale"],

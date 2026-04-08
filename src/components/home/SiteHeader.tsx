@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X, ShoppingCart, Search, User } from "lucide-react";
-import logo from "/user-uploads/cigar-logo_2.png";
+import logo from "@/assets/cigar-logo.png";
 
 const navLinks = [
   { label: "Cigars", href: "#" },
