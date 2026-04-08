@@ -2,17 +2,30 @@ import { useState } from "react";
 import SiteHeader from "@/components/home/SiteHeader";
 import SiteFooter from "@/components/home/SiteFooter";
 import ScrollReveal from "@/components/home/ScrollReveal";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 
 const ContactPage = () => {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // placeholder
     alert("Thank you for your message! We'll get back to you within 24 hours.");
     setForm({ name: "", email: "", subject: "", message: "" });
   };
+
+  const contactInfo = [
+    { icon: Mail, label: "Email", value: "info@cubancigarworld.com.au", href: "mailto:info@cubancigarworld.com.au" },
+    { icon: Phone, label: "Phone", value: "+61 3 9000 0000", href: "tel:+61390000000" },
+    { icon: MapPin, label: "Location", value: "Melbourne, Victoria, Australia" },
+    { icon: Clock, label: "Hours", value: "Mon–Fri: 9am–5pm AEST" },
+  ];
+
+  const socialLinks = [
+    { icon: Facebook, label: "Facebook", href: "#" },
+    { icon: Instagram, label: "Instagram", href: "#" },
+    { icon: Twitter, label: "X (Twitter)", href: "#" },
+    { icon: Youtube, label: "YouTube", href: "#" },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -36,36 +49,55 @@ const ContactPage = () => {
           <section className="py-16 sm:py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
-                {/* Info */}
+                {/* Left – Contact Details & Social */}
                 <div className="lg:col-span-2">
                   <h2 className="text-2xl font-serif font-bold text-foreground mb-6">We're Here to Help</h2>
                   <p className="text-muted-foreground font-sans leading-relaxed mb-10">
                     Whether you need advice on choosing the perfect cigar, help with an order, or information about our luxury gift collections — our team is ready to assist.
                   </p>
 
-                  <div className="space-y-6">
-                    {[
-                      { icon: Mail, label: "Email", value: "info@cubancigarworld.com.au" },
-                      { icon: Phone, label: "Phone", value: "+61 3 9000 0000" },
-                      { icon: MapPin, label: "Location", value: "Melbourne, Victoria, Australia" },
-                      { icon: Clock, label: "Hours", value: "Mon–Fri: 9am–5pm AEST" },
-                    ].map(({ icon: Icon, label, value }) => (
+                  <div className="space-y-6 mb-10">
+                    {contactInfo.map(({ icon: Icon, label, value, href }) => (
                       <div key={label} className="flex items-start gap-4">
                         <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center flex-shrink-0">
                           <Icon className="w-4 h-4 text-primary" />
                         </div>
                         <div>
                           <p className="text-xs uppercase tracking-wider text-muted-foreground font-sans mb-1">{label}</p>
-                          <p className="text-sm font-sans text-foreground">{value}</p>
+                          {href ? (
+                            <a href={href} className="text-sm font-sans text-foreground hover:text-primary transition-colors">
+                              {value}
+                            </a>
+                          ) : (
+                            <p className="text-sm font-sans text-foreground">{value}</p>
+                          )}
                         </div>
                       </div>
                     ))}
                   </div>
+
+                  {/* Social Links */}
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-sans mb-4">Follow Us</p>
+                    <div className="flex gap-3">
+                      {socialLinks.map(({ icon: Icon, label, href }) => (
+                        <a
+                          key={label}
+                          href={href}
+                          aria-label={label}
+                          className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary text-muted-foreground transition-colors duration-300"
+                        >
+                          <Icon className="w-4 h-4" />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
-                {/* Form */}
+                {/* Right – Feedback Form */}
                 <div className="lg:col-span-3">
                   <form onSubmit={handleSubmit} className="bg-card border border-border rounded-sm p-8 sm:p-10">
+                    <h3 className="text-xl font-serif font-bold text-foreground mb-6">Send Us a Message</h3>
                     <div className="grid sm:grid-cols-2 gap-5 mb-5">
                       <div>
                         <label className="block text-xs uppercase tracking-wider text-muted-foreground font-sans mb-2">Your Name</label>
@@ -121,29 +153,6 @@ const ContactPage = () => {
                     </button>
                   </form>
                 </div>
-              </div>
-            </div>
-          </section>
-        </ScrollReveal>
-
-        {/* FAQ */}
-        <ScrollReveal>
-          <section className="py-16 sm:py-24 bg-secondary/30 border-t border-border">
-            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <p className="text-xs uppercase tracking-[0.3em] text-primary font-sans mb-3">Common Questions</p>
-              <h2 className="text-3xl font-serif font-bold text-foreground mb-12">Frequently Asked</h2>
-              <div className="text-left space-y-6">
-                {[
-                  { q: "Do you ship Australia-wide?", a: "Yes! We offer standard and express shipping across all of Australia. Orders over $150 qualify for free standard shipping." },
-                  { q: "Are your cigars authentic?", a: "Absolutely. Every cigar we sell is sourced from trusted suppliers and verified for authenticity. We stand behind the quality of every product." },
-                  { q: "Can I return a product?", a: "We accept returns on unopened items within 30 days of purchase. Please contact us for a return authorisation before sending items back." },
-                  { q: "Do you offer gift wrapping?", a: "Yes, we offer premium gift wrapping with a personalised message card at checkout. Perfect for birthdays, anniversaries, and special occasions." },
-                ].map(({ q, a }) => (
-                  <div key={q} className="bg-card border border-border rounded-sm p-6">
-                    <h3 className="text-sm font-serif font-semibold text-foreground mb-2">{q}</h3>
-                    <p className="text-sm text-muted-foreground font-sans leading-relaxed">{a}</p>
-                  </div>
-                ))}
               </div>
             </div>
           </section>
