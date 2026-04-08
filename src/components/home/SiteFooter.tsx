@@ -1,9 +1,28 @@
+import { Link } from "react-router-dom";
 import logo from "@/assets/cigar-logo.png";
 
 const footerLinks = {
-  "Shop": ["Premium Cigars", "Accessories", "Luxury Gifts", "Collectibles", "New Arrivals", "Sale"],
-  "Information": ["About Us", "Shipping & Returns", "FAQ", "Contact Us", "Blog"],
-  "Legal": ["Privacy Policy", "Terms & Conditions", "Refund Policy", "Age Verification"],
+  "Shop": [
+    { label: "Premium Cigars", href: "/products" },
+    { label: "Accessories", href: "/products" },
+    { label: "Luxury Gifts", href: "/products" },
+    { label: "Collectibles", href: "/products" },
+    { label: "New Arrivals", href: "/products" },
+    { label: "Sale", href: "/products" },
+  ],
+  "Information": [
+    { label: "About Us", href: "/about" },
+    { label: "Contact Us", href: "/contact" },
+    { label: "Shipping & Returns", href: "#" },
+    { label: "FAQ", href: "/contact" },
+    { label: "Blog", href: "#" },
+  ],
+  "Legal": [
+    { label: "Privacy Policy", href: "#" },
+    { label: "Terms & Conditions", href: "#" },
+    { label: "Refund Policy", href: "#" },
+    { label: "Age Verification", href: "#" },
+  ],
 };
 
 const SiteFooter = () => {
@@ -36,10 +55,10 @@ const SiteFooter = () => {
               <h4 className="text-sm font-serif font-semibold text-foreground mb-4">{title}</h4>
               <ul className="space-y-2.5">
                 {links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors font-sans">
-                      {link}
-                    </a>
+                  <li key={link.label}>
+                    <Link to={link.href} className="text-xs text-muted-foreground hover:text-primary transition-colors font-sans">
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>

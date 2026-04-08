@@ -1,4 +1,5 @@
 import { Shield, Award, DollarSign, Truck, CheckCircle } from "lucide-react";
+import StaggerReveal from "@/components/home/StaggerReveal";
 
 const reasons = [
   { icon: Shield, title: "Authentic Products", desc: "Every item is verified for authenticity and quality" },
@@ -19,17 +20,19 @@ const TrustSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-          {reasons.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="text-center group">
-              <div className="w-14 h-14 mx-auto mb-4 rounded-full border border-primary/30 flex items-center justify-center group-hover:bg-primary/10 transition-colors duration-300">
-                <Icon className="w-6 h-6 text-primary" />
+        <StaggerReveal staggerDelay={100}>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            {reasons.map(({ icon: Icon, title, desc }) => (
+              <div key={title} data-stagger className="text-center group opacity-0">
+                <div className="w-14 h-14 mx-auto mb-4 rounded-full border border-primary/30 flex items-center justify-center group-hover:bg-primary/10 transition-colors duration-300">
+                  <Icon className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-sm font-serif font-semibold text-foreground mb-2">{title}</h3>
+                <p className="text-xs text-muted-foreground font-sans leading-relaxed">{desc}</p>
               </div>
-              <h3 className="text-sm font-serif font-semibold text-foreground mb-2">{title}</h3>
-              <p className="text-xs text-muted-foreground font-sans leading-relaxed">{desc}</p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </StaggerReveal>
       </div>
     </section>
   );
