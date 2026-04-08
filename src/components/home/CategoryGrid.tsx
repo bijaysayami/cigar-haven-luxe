@@ -40,7 +40,7 @@ const CategoryGrid = () => {
                   height={800}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500 rounded-sm shadow-sm" />
                 <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
                   <h3 className="text-lg sm:text-xl font-serif font-bold text-foreground mb-1">
                     {cat.name}
