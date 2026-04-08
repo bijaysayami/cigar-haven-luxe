@@ -1,14 +1,15 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, ShoppingCart, Search, User } from "lucide-react";
 import logo from "@/assets/cigar-logo.png";
 
 const navLinks = [
-  { label: "Cigars", href: "#" },
-  { label: "Accessories", href: "#" },
-  { label: "Luxury Gifts", href: "#" },
-  { label: "Collectibles", href: "#" },
-  { label: "New Arrivals", href: "#" },
-  { label: "Sale", href: "#" },
+  { label: "Cigars", href: "/products" },
+  { label: "Accessories", href: "/products" },
+  { label: "Luxury Gifts", href: "/products" },
+  { label: "Collectibles", href: "/products" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const SiteHeader = () => {
@@ -35,20 +36,20 @@ const SiteHeader = () => {
             </button>
 
             {/* Logo */}
-            <a href="#" className="flex-shrink-0">
+            <Link to="/" className="flex-shrink-0">
               <img src={logo} alt="Cuban Cigar World" className="h-14 w-auto" />
-            </a>
+            </Link>
 
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-8">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.href}
                   className="text-sm uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors font-sans font-medium"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -75,14 +76,14 @@ const SiteHeader = () => {
           <div className="lg:hidden bg-background border-t border-border">
             <nav className="flex flex-col py-4 px-6 gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.href}
                   className="text-sm uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors font-sans font-medium py-2"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
