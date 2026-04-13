@@ -1,28 +1,496 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cuban Cigar World | Premium Cigars &amp; Luxury Gifts Australia</title>
-    <meta name="description" content="Australia&#39;s premier destination for premium Cuban cigars, luxury accessories, and curated gifts for the discerning gentleman. Shop authentic cigars, humidors, whiskey sets, and collectibles.">
-    <meta name="author" content="Cuban Cigar World" />
-
-    
-    
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9d09b339-4665-4f25-b48e-7a48448e432c/id-preview-9f0b0c3d--f7eeba53-0f50-4404-ab3b-f6f579e67892.lovable.app-1775654256522.png">
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@CubanCigarWorld" />
-    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9d09b339-4665-4f25-b48e-7a48448e432c/id-preview-9f0b0c3d--f7eeba53-0f50-4404-ab3b-f6f579e67892.lovable.app-1775654256522.png">
-    <meta property="og:title" content="Cuban Cigar World | Premium Cigars &amp; Luxury Gifts Australia">
-  <meta name="twitter:title" content="Cuban Cigar World | Premium Cigars &amp; Luxury Gifts Australia">
-  <meta property="og:description" content="Australia&#39;s premier destination for premium Cuban cigars, luxury accessories, and curated gifts for the discerning gentleman. Shop authentic cigars, humidors, whiskey sets, and collectibles.">
-  <meta name="twitter:description" content="Australia&#39;s premier destination for premium Cuban cigars, luxury accessories, and curated gifts for the discerning gentleman. Shop authentic cigars, humidors, whiskey sets, and collectibles.">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuban Cigar World | Premium Cigars &amp; Luxury Gifts Australia</title>
+  <meta name="description" content="Australia's premier destination for premium Cuban cigars, luxury accessories, and curated gifts for the discerning gentleman.">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+<body>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <!-- Promo Bar -->
+  <div class="promo-bar">
+    <p>Free Shipping on Orders Over $150 | Premium Quality Guaranteed</p>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="images/cigar-logo.png" alt="Cuban Cigar World">
+      </a>
+      <nav class="header-nav">
+        <a href="products.html">Cigars</a>
+        <a href="products.html">Accessories</a>
+        <a href="products.html">Luxury Gifts</a>
+        <a href="products.html">Collectibles</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <button aria-label="Account">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+        <button aria-label="Cart" style="position:relative;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-close">
+      <button id="mobile-menu-close" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <nav>
+      <a href="products.html">Cigars</a>
+      <a href="products.html">Accessories</a>
+      <a href="products.html">Luxury Gifts</a>
+      <a href="products.html">Collectibles</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="images/hero-bg.jpg" alt="">
+      <div class="hero-overlay-lr"></div>
+      <div class="hero-overlay-tb"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Australia's Premier Cigar Destination
+      </div>
+      <h1>Experience the<br><span class="text-gold-gradient">Art of Fine Living</span></h1>
+      <p class="hero-text">Curated premium cigars and luxury gifts for the discerning gentleman. Elevate every moment with our handpicked collection.</p>
+      <div class="hero-buttons">
+        <a href="products.html" class="btn btn-primary btn-lg">Shop Cigars</a>
+        <a href="products.html" class="btn btn-outline btn-lg">Explore Gifts</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-trust-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Authentic Products
+        </div>
+        <div class="hero-trust-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Curated Collection
+        </div>
+        <div class="hero-trust-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          Fast Shipping
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section scroll-reveal">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Browse By Category</p>
+        <h2 class="section-title">Our Collections</h2>
+      </div>
+      <div class="category-grid stagger-parent">
+        <a href="products.html" class="category-card stagger-child">
+          <img src="images/cat-cigars.jpg" alt="Premium Cigars">
+          <div class="category-card-overlay"></div>
+          <div class="category-card-content">
+            <h3>Premium Cigars</h3>
+            <p>Cuban &middot; Dominican &middot; Nicaraguan</p>
+            <div class="category-underline"></div>
+          </div>
+        </a>
+        <a href="products.html" class="category-card stagger-child">
+          <img src="images/cat-accessories.jpg" alt="Accessories">
+          <div class="category-card-overlay"></div>
+          <div class="category-card-content">
+            <h3>Accessories</h3>
+            <p>Humidors &middot; Cutters &middot; Lighters</p>
+            <div class="category-underline"></div>
+          </div>
+        </a>
+        <a href="products.html" class="category-card stagger-child">
+          <img src="images/cat-gifts.jpg" alt="Luxury Gifts">
+          <div class="category-card-overlay"></div>
+          <div class="category-card-content">
+            <h3>Luxury Gifts</h3>
+            <p>Whiskey Sets &middot; Leather &middot; Chess</p>
+            <div class="category-underline"></div>
+          </div>
+        </a>
+        <a href="products.html" class="category-card stagger-child">
+          <img src="images/cat-collectibles.jpg" alt="Collectibles">
+          <div class="category-card-overlay"></div>
+          <div class="category-card-content">
+            <h3>Collectibles</h3>
+            <p>Statues &middot; Vintage &middot; Art</p>
+            <div class="category-underline"></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="section section-alt scroll-reveal">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Handpicked For You</p>
+        <h2 class="section-title">Featured Products</h2>
+      </div>
+      <div class="products-grid grid-4 stagger-parent" id="featured-products"></div>
+      <div style="text-align:center;margin-top:2.5rem;">
+        <a href="products.html" class="btn btn-outline">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Section -->
+  <section class="section section-bordered scroll-reveal">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">The CCW Difference</p>
+        <h2 class="section-title">Why Choose Us</h2>
+      </div>
+      <div class="trust-grid stagger-parent">
+        <div class="trust-item stagger-child">
+          <div class="trust-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Authentic Products</h3>
+          <p>Every item is verified for authenticity and quality</p>
+        </div>
+        <div class="trust-item stagger-child">
+          <div class="trust-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </div>
+          <h3>Years of Expertise</h3>
+          <p>Decades of passion for premium cigars and luxury goods</p>
+        </div>
+        <div class="trust-item stagger-child">
+          <div class="trust-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Competitive Pricing</h3>
+          <p>Premium quality at the best possible prices</p>
+        </div>
+        <div class="trust-item stagger-child">
+          <div class="trust-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3>Fast Shipping</h3>
+          <p>Reliable Australia-wide delivery with tracking</p>
+        </div>
+        <div class="trust-item stagger-child">
+          <div class="trust-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>Curated Collection</h3>
+          <p>Handpicked selection of the finest products</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section scroll-reveal fade-in-left">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrapper">
+          <img src="images/lifestyle-1.jpg" alt="Our Story">
+          <div class="about-image-decorator"></div>
+        </div>
+        <div class="about-text">
+          <p class="section-label">Our Story</p>
+          <h2>A Passion for the <span class="text-gold-gradient">Finer Things</span></h2>
+          <p>At Cuban Cigar World, we believe in the art of slow living. Every cigar in our collection is carefully selected from the world's finest producers, ensuring an unparalleled smoking experience for the true aficionado.</p>
+          <p>Beyond cigars, we curate an exclusive selection of luxury gifts, accessories, and collectibles — each item chosen for its craftsmanship, heritage, and ability to elevate everyday moments into something extraordinary.</p>
+          <div class="stats-row">
+            <div class="stat-item">
+              <div class="stat-number">10+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">5K+</div>
+              <div class="stat-label">Happy Customers</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Premium Products</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bestsellers -->
+  <section class="section section-alt scroll-reveal">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Most Popular</p>
+        <h2 class="section-title">Bestsellers</h2>
+      </div>
+      <div class="bestsellers-grid stagger-parent">
+        <a href="product-detail.html?id=1" class="bestseller-card stagger-child">
+          <div class="bestseller-card-image">
+            <img src="images/cat-cigars.jpg" alt="Partagas Serie D No. 4">
+          </div>
+          <div class="bestseller-card-content">
+            <div class="trending-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+              Trending
+            </div>
+            <h3>Partagas Serie D No. 4</h3>
+            <div class="bestseller-meta">
+              <span class="price">$74.95</span>
+              <span class="sold">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                342 sold
+              </span>
+            </div>
+          </div>
+        </a>
+        <a href="product-detail.html?id=12" class="bestseller-card stagger-child">
+          <div class="bestseller-card-image">
+            <img src="images/cat-gifts.jpg" alt="Hand-Carved Chess Set">
+          </div>
+          <div class="bestseller-card-content">
+            <div class="trending-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+              Trending
+            </div>
+            <h3>Hand-Carved Chess Set</h3>
+            <div class="bestseller-meta">
+              <span class="price">$349.00</span>
+              <span class="sold">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                128 sold
+              </span>
+            </div>
+          </div>
+        </a>
+        <a href="product-detail.html?id=14" class="bestseller-card stagger-child">
+          <div class="bestseller-card-image">
+            <img src="images/cat-collectibles.jpg" alt="Antique Bronze Globe">
+          </div>
+          <div class="bestseller-card-content">
+            <div class="trending-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+              Trending
+            </div>
+            <h3>Antique Bronze Globe</h3>
+            <div class="bestseller-meta">
+              <span class="price">$189.00</span>
+              <span class="sold">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                96 sold
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lifestyle Section -->
+  <section class="section scroll-reveal">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">The Lifestyle</p>
+        <h2 class="section-title">Moments Worth Celebrating</h2>
+      </div>
+      <div class="lifestyle-grid">
+        <div class="lifestyle-card">
+          <img src="images/lifestyle-1.jpg" alt="The Art of Unwinding">
+          <div class="lifestyle-card-overlay"></div>
+          <div class="lifestyle-card-content">
+            <p class="label">Relaxation</p>
+            <h3>The Art of Unwinding</h3>
+            <p>A fine cigar, a glass of whiskey, and the perfect moment of stillness.</p>
+          </div>
+        </div>
+        <div class="lifestyle-card">
+          <img src="images/lifestyle-2.jpg" alt="Gifts They'll Remember">
+          <div class="lifestyle-card-overlay"></div>
+          <div class="lifestyle-card-content">
+            <p class="label">Gifting</p>
+            <h3>Gifts They'll Remember</h3>
+            <p>Make every occasion unforgettable with our curated luxury gifts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section section-alt section-bordered scroll-reveal">
+    <div class="container testimonials-section">
+      <div class="section-header">
+        <p class="section-label">Testimonials</p>
+        <h2 class="section-title">What Our Customers Say</h2>
+      </div>
+      <div class="testimonial-container">
+        <div class="testimonial-quote-icon">&ldquo;</div>
+        <div class="testimonial-slide active">
+          <p class="testimonial-text">Absolutely fantastic selection. The Cohiba Behike I ordered was in perfect condition. Packaging was premium and delivery was fast. Will be a repeat customer for sure.</p>
+          <div class="testimonial-stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-author">James M.</p>
+          <p class="testimonial-location">Sydney, NSW</p>
+        </div>
+        <div class="testimonial-slide">
+          <p class="testimonial-text">Bought a whiskey decanter set as a gift — the quality blew me away. Cuban Cigar World has become my go-to for unique luxury gifts. Highly recommended.</p>
+          <div class="testimonial-stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-author">David R.</p>
+          <p class="testimonial-location">Melbourne, VIC</p>
+        </div>
+        <div class="testimonial-slide">
+          <p class="testimonial-text">The humidor I purchased is stunning. Great communication from the team and the product arrived earlier than expected. Top-notch service all around.</p>
+          <div class="testimonial-stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-author">Michael T.</p>
+          <p class="testimonial-location">Brisbane, QLD</p>
+        </div>
+        <div class="testimonial-dots">
+          <button class="testimonial-dot active" aria-label="Slide 1"></button>
+          <button class="testimonial-dot" aria-label="Slide 2"></button>
+          <button class="testimonial-dot" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo Banner -->
+  <section class="promo-banner scroll-reveal">
+    <div class="promo-banner-bg">
+      <img src="images/hero-bg.jpg" alt="">
+      <div class="promo-banner-overlay"></div>
+    </div>
+    <div class="container promo-banner-content">
+      <p class="section-label">Limited Time Offer</p>
+      <h2>20% Off Your First Order</h2>
+      <p class="tagline">Use code WELCOME20 at checkout. Discover our curated collection of premium cigars and luxury gifts.</p>
+      <a href="products.html" class="btn btn-primary btn-lg">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section scroll-reveal">
+    <div class="container">
+      <div class="newsletter">
+        <p class="section-label">Stay Connected</p>
+        <h2 class="section-title">Join the Club</h2>
+        <p style="color:var(--muted-foreground);font-size:0.875rem;line-height:1.7;">Subscribe for exclusive offers, new arrivals, and cigar guides delivered to your inbox.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" placeholder="Enter your email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="newsletter-footer">No spam. Unsubscribe anytime. We respect your privacy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><img src="images/cigar-logo.png" alt="Cuban Cigar World"></a>
+          <p>Australia's premier destination for premium cigars and luxury gifts.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">Premium Cigars</a></li>
+            <li><a href="products.html">Accessories</a></li>
+            <li><a href="products.html">Luxury Gifts</a></li>
+            <li><a href="products.html">Collectibles</a></li>
+            <li><a href="products.html">New Arrivals</a></li>
+            <li><a href="products.html">Sale</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Information</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Shipping &amp; Returns</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">Age Verification</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Cuban Cigar World. All rights reserved.</p>
+        <p>You must be 18+ to purchase tobacco products.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('featured-products');
+      if (grid && typeof products !== 'undefined') {
+        const featured = products.slice(0, 8);
+        grid.innerHTML = featured.map(p => {
+          return createProductCard(p).replace('class="product-card"', 'class="product-card stagger-child"');
+        }).join('');
+      }
+    });
+  </script>
+</body>
 </html>
